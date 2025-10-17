@@ -1,0 +1,92 @@
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-principal: #cb2724;
+    --cor-texto: #2c3e50;
+    --cor-fundo: #040102;
+}
+
+@font-face {
+    font-family: 'Milker';
+    src: url(./fonts/Milker.otf);
+}
+
+/* header */
+.cabecalho {
+    background: var(--cor-principal);
+    display: flex;
+    align-items: center; /* antes align-self */
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    max-height: 180px;
+}
+
+.cabecalho h1{
+    font-family: 'Milker';
+}
+
+/* logo e imagens */
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+header img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* contatos */
+.cabecalho .contatos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #000;
+    border-radius: 30px;
+    padding: 10px;
+    min-width: 200px; 
+    width: auto;
+}
+
+
+.cabecalho .contatos a img,.whats {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    transition: transform 0.25s ease, background-color 0.25s;
+    border-radius: 12px;
+}
+.cabecalho .contatos a .instagram:hover,
+.cabecalho .contatos .contato_whats .whats:hover {
+    transform: scale(1.08);
+}
+
+/* textos de contato */
+.contato_whats {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.contato_whats p {
+    color: #fff;
+    font-size: 0.875rem; /* use rem para acessibilidade */
+}
+
+/* main */
+
+main{
+    background-color: var(--cor-fundo);
+
+    width: 100%;
+    height: 100%;
+}
