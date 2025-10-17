@@ -9,7 +9,7 @@
 
 :root {
     --cor-principal: #cb2724;
-    --cor-texto: #2c3e50;
+    --cor-secundaria: #FEFDFD;
     --cor-fundo: #040102;
 }
 
@@ -89,4 +89,24 @@ main{
 
     width: 100%;
     height: 100%;
+}
+
+main video{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+
+    transform: rotate(270deg);
+}
+
+main video::-webkit-media-controls{
+    transform: rotate(270deg);
+}
+
+/* tabela de horarios */
+
+section{
+    color: var(--cor-secundaria);
 }
