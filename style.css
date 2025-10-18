@@ -32,6 +32,7 @@
 
 .cabecalho h1{
     font-family: 'Milker';
+    font-size: 3.5rem;
 }
 
 /* logo e imagens */
@@ -106,8 +107,57 @@ main video::-webkit-media-controls{
     transform: rotate(270deg);
 }
 
-/* tabela de horarios */
+/* cards */
 
-section{
+.sub_titulo{
+    text-align: center;
     color: var(--cor-secundaria);
+    font-family: "Milker";
+    font-size: 2rem;
+    margin: 20px 0;
 }
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 20px
+
+}
+
+.card{
+    background-color: var(--cor-principal);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    margin: 15px;
+    padding: 20px;
+    width: 350px;
+    height: 450px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card_text{
+    text-align: center;
+}
+
+.card_text h2{
+    color: var(--cor-fundo);
+    padding: 10px;
+    font-family: "Milker";
+}
+
+.cards img{
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+}
+
