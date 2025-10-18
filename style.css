@@ -161,3 +161,29 @@ main video::-webkit-media-controls{
     display: flex;
 }
 
+.container_local{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    background-color: var(--cor-principal);
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    margin: auto;
+}
+
+.container_local .texto_local{
+    color: var(--cor-secundaria);
+    font-family: "Milker";
+    text-align: center;
+}
+
+.container_local .texto_local h3{
+    font-size: 2rem;
+    padding-bottom: 70px;
+}
