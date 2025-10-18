@@ -94,13 +94,15 @@ main{
 }
 
 main video{
-    display: flex;
+    display: block;
     margin: auto;
-    width: 100%;
+    width: auto;
     height: auto;
-    max-width: 600px;
-
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
     transform: rotate(270deg);
+    transform-origin: center center;
 }
 
 main video::-webkit-media-controls{
@@ -186,4 +188,164 @@ main video::-webkit-media-controls{
 .container_local .texto_local h3{
     font-size: 2rem;
     padding-bottom: 70px;
+}
+
+/* Responsividade: tablets e celulares */
+
+/* Tablet / pequenos laptops */
+@media (max-width: 1024px) {
+    .cabecalho h1 { font-size: 2.8rem; }
+    .logo { max-width: 120px; }
+    header img { max-width: 90px; }
+    .cabecalho .contatos { min-width: 160px; gap: 10px; padding: 8px; }
+    .cards img { width: 260px; height: 260px; }
+    .card { width: 320px; height: auto; }
+
+    main video{
+        max-width: 35vh;
+    }
+}
+
+/* Tablets grande / mobile landscape */
+@media (max-width: 768px) {
+    /* header empilha e centraliza */
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+    }
+    .cabecalho h1 { font-size: 2.0rem; text-align: center; }
+    .logo { max-width: 110px; }
+
+    /* contatos ocupam toda a largura disponível */
+    .cabecalho .contatos {
+        width: 100%;
+        max-width: 420px;
+        justify-content: center;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    .cabecalho .contatos a img,
+    .whats {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+    }
+    main video {
+        transform: rotate(270deg) !important;
+        -webkit-transform: rotate(270deg) !important;
+        transform-origin: center center;
+        width: auto !important;
+        height: auto !important;
+        max-height: 60vh;
+        max-width: 90%;
+        object-fit: contain;
+    }
+    main video::-webkit-media-controls {
+        transform: rotate(270deg) !important;
+    }    
+
+    /* títulos e seções */
+    .sub_titulo { font-size: 1.6rem; padding: 0 12px; }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    /* cards adaptáveis */
+    .card {
+        width: calc(100% - 40px);
+        max-width: 520px;
+        height: auto;
+        margin: 8px 0;
+        padding: 16px;
+    }
+    .cards img {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+    }
+
+    /* container local */
+    .container_local {
+        width: 94%;
+        padding: 16px;
+        margin-top: 20px;
+    }
+    .container_local .texto_local h3 { padding-bottom: 24px; font-size: 1.6rem; }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .cabecalho{ 
+        padding: 20px; 
+    }
+    .cabecalho h1 { font-size: 1.6rem; line-height: 1.1; }
+    .logo { max-width: 90px; }
+    header img { max-width: 70px; }
+
+    .cabecalho .contatos a img,
+    .whats {
+    
+        height: 100%;
+        max-height: 300px;
+        width: 100%;
+        height: auto;
+    }
+
+    main video {
+    transform: rotate(270deg) !important; 
+    -webkit-transform: rotate(270deg) !important;
+    transform-origin: center center;
+    width: auto !important;
+    height: auto !important;
+    max-height: 45vh;
+    max-width: 80%;
+    object-fit: contain;
+    }
+
+    .contato_whats p { font-size: 0.8rem; }
+
+    .sub_titulo { font-size: 1.4rem; margin: 16px 0; }
+
+    .card {
+        width: calc(100% - 24px);
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+    .card_text h2 { font-size: 1.25rem; padding: 6px 0; }
+
+    .cards img { width: 100%; height: auto; display: block; }
+
+    .container_local {
+        width: 96%;
+        padding: 12px;
+        border-radius: 10px;
+    }
+    .container_local .texto_local h3 { font-size: 1.4rem; padding-bottom: 12px; }
+
+    /* pequenas melhorias de toque */
+    .cabecalho .contatos a,
+    .cabecalho .contatos .contato_whats {
+        touch-action: manipulation;
+    }
+
+    .container_local{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    main video{
+        max-height: 30vh;
+    }
 }
