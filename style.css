@@ -190,6 +190,98 @@ main video::-webkit-media-controls{
     padding-bottom: 70px;
 }
 
+/* horários (tabela responsiva) */
+.table_horarios {
+    width: 100%;
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 16px;
+    overflow-x: auto; /* permite rolagem em telas pequenas */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* estrutura da tabela */
+.table_horarios table {
+    width: 100%;
+    min-width: 820px; /* forçar scroll em telas pequenas */
+    border-collapse: collapse;
+    background: transparent;
+    font-family: "Milker", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* cabeçalho fixo (sticky) */
+.table_horarios thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, var(--cor-principal), color-mix(in srgb, var(--cor-principal) 85%, black));
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 3px solid rgba(0,0,0,0.15);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* células do corpo */
+.table_horarios tbody td {
+    padding: 12px 16px;
+    text-align: center;
+    color: var(--cor-secundaria);
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.02); /* leve contraste sobre o fundo escuro */
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+/* listras alternadas para legibilidade */
+.table_horarios tbody tr:nth-child(even) td {
+    background: rgba(255,255,255,0.03);
+}
+
+/* destaque ao passar o mouse (desktop) */
+.table_horarios tbody tr:hover td {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-2px);
+}
+
+
+
+/* acessibilidade: foco por teclado */
+.table_horarios tbody td:focus {
+    outline: 3px solid rgba(203,39,36,0.25);
+    outline-offset: 2px;
+}
+
+/* responsividade: reduzir padding e tipografia em telas menores */
+@media (max-width: 1024px) {
+    .table_horarios table { min-width: 720px; }
+    .table_horarios thead th { padding: 12px 14px; font-size: 0.9rem; }
+    .table_horarios tbody td { padding: 10px 12px; font-size: 0.9rem; }
+}
+
+/* em celulares: permitir scroll horizontal e ajustar tamanhos */
+@media (max-width: 768px) {
+    .table_horarios {
+        padding: 0 10px;
+        margin: 20px auto;
+    }
+    .table_horarios table { min-width: 640px; }
+    .table_horarios thead th { font-size: 0.85rem; padding: 10px 12px; }
+    .table_horarios tbody td { font-size: 0.88rem; padding: 8px 10px; }
+}
+
+/* telas muito pequenas: tornar a tabela compacta */
+@media (max-width: 480px) {
+    .table_horarios table { min-width: 560px; }
+    .table_horarios thead th { font-size: 0.82rem; padding: 8px 10px; }
+    .table_horarios tbody td { font-size: 0.82rem; padding: 6px 8px; }
+    .table_horarios tbody tr:hover td { transform: none; } /* evitar movimento em telas sensíveis ao toque */
+}
+
 /* Responsividade: tablets e celulares */
 
 /* Tablet / pequenos laptops */
